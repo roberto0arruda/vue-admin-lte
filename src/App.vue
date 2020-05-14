@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="wrapper skin-blue">
+    <app-header></app-header>
+    <app-Sidebar></app-Sidebar>
+    <app-content></app-content>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import AppHeader from './components/layouts/Header'
+  import AppSidebar from './components/layouts/Sidebar'
+  import AppContent from './components/layouts/Content'
+  import AppFooter from './components/layouts/Footer'
+  import Menus from './menus'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'App',
+    data() {
+      return {
+        menus: Menus,
+      }
+    },
+    components: {
+      AppHeader,
+      AppSidebar,
+      AppContent,
+      AppFooter
+    }
   }
-}
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style src="bootstrap/dist/css/bootstrap.min.css"></style>
+<style src="font-awesome/css/font-awesome.min.css"></style>
+<style src="admin-lte/dist/css/AdminLTE.min.css"></style>
+<style src="admin-lte/dist/css/skins/_all-skins.min.css"></style>
